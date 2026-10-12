@@ -418,20 +418,15 @@ do
   }
 
   -- [[ Colorscheme ]]
-  -- You can easily change to a different colorscheme.
-  -- Change the name of the colorscheme plugin below, and then
-  -- change the command under that to load whatever the name of that colorscheme is.
-  --
-  -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-  vim.pack.add { gh 'devonhopper/onehalfdark.nvim' }
-  require('onehalfdark').setup {
-    italic = {
-      comments = false, -- Disable italics in comments
+  -- Catppuccin Frappé — matches Windows Terminal + Starship
+  vim.pack.add { gh 'catppuccin/nvim' }
+  require('catppuccin').setup {
+    flavour = 'frappe',
+    styles = {
+      comments = { 'italic' },
     },
   }
-
-  -- Load the colorscheme here.
-  vim.cmd.colorscheme 'onehalfdark'
+  vim.cmd.colorscheme 'catppuccin'
 
   -- Highlight todo, notes, etc in comments
   vim.pack.add { gh 'folke/todo-comments.nvim' }
